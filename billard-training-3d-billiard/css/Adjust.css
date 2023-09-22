@@ -1,0 +1,52 @@
+.adjust {
+    color: #999;
+    width: 200px;
+    font-size: 12px;
+    position: absolute;
+    left: 4px;
+    border: solid 1px #999;
+    border-radius: 8px;
+    padding: 4px;
+    margin-top: 4px;
+  }
+  
+  .slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    height: 24px;
+  }
+  
+  .input {
+    margin: 10px 0;
+    width: 160px;
+    height: 4px;
+    appearance: none;
+    border-radius: 6px;
+    background: transparent;
+  }
+  .input:focus {
+    outline: none;
+  }
+  .input::-webkit-slider-runnable-track {
+    width: 160px;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #aaa;
+    border: 0px solid #000101;
+    border-radius: 6px;
+  }
+  .input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    width: 3px;
+    background-color: #cdcdcd;
+    cursor: ew-resize;
+    margin-top: -2px;
+  }
+  .label {
+    align-items: center;
+  }
