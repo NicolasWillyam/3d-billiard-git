@@ -1,21 +1,21 @@
 import { useLayoutEffect, useRef } from "react";
-import { Vector3, BufferGeometry, Line, LineBasicMaterial } from "three";
+import {
+  Vector3,
+  BufferGeometry,
+  Line,
+  LineBasicMaterial,
+  NormalBufferAttributes,
+} from "three";
 
 export type LinesProps = {
   start: Vector3;
   end: Vector3;
+  ref: React.MutableRefObject<BufferGeometry<NormalBufferAttributes>>;
 };
 
 function Lines(props: LinesProps) {
-  const { start, end } = props;
-  const points: Vector3[] = [];
-  points.push(new Vector3(...start));
-  points.push(new Vector3(...end));
-  const ref = useRef<BufferGeometry>(null!);
-  useLayoutEffect(() => {
-    if (ref.current) ref.current.setFromPoints(points);
-  }, []);
-
+  const { start, end, ref } = props;
+  console.log(ref);
   return (
     <line>
       <bufferGeometry attach="geometry" ref={ref} />

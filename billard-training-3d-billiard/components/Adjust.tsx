@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
+import Slider from "react-native-slider";
 import InputRange from "react-input-range";
 // import Slider;
 import Animated, {
@@ -11,7 +12,7 @@ import Animated, {
 
 export type AdjustProps = {
   value: number;
-  changeValue: () => {};
+  changeValue: (e: number) => {};
   max: number;
   min: number;
   label: string;
@@ -21,7 +22,7 @@ const Adjust = (props: AdjustProps) => {
   return (
     <View style={styles.adjust}>
       <Text style={styles.label}>
-        {props.label} : {props.value}
+        {props.label} : {props.value.toFixed(3)}
       </Text>
       {/* <Slider
         value={props.value}
@@ -30,29 +31,14 @@ const Adjust = (props: AdjustProps) => {
         minimumValue={props.min}
         step={0.01}
       /> */}
-      {/* <Slider
+      <Slider
         {...props}
         value={props.value}
         onValueChange={props.changeValue}
         maximumValue={props.max}
         minimumValue={props.min}
         step={0.001}
-      /> */}
-
-      {/* <View style={styles.slider}>
-
-        <TextInput
-          style={styles.input}
-          type="range"
-          {...props}
-          onChange={props.changeValue}
-          min={props.min}
-          max={props.max}
-          step={0.001}
-          value={props.value}
-        ></TextInput>
-        <p>{props.value}</p>
-      </View> */}
+      />
     </View>
   );
 };
